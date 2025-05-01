@@ -1,0 +1,139 @@
+<Page
+    x:Class="WPF_Frame.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_Frame.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="设置页面"
+    d:DesignHeight="650"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <StackPanel Margin="40">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    FontSize="24"
+                    FontWeight="Bold"
+                    Text="应用设置" />
+
+                <!--  设置项  -->
+                <GroupBox
+                    Margin="0,10"
+                    Padding="10"
+                    Header="外观设置">
+                    <StackPanel>
+                        <CheckBox
+                            x:Name="chkDarkMode"
+                            Margin="0,5"
+                            Content="启用深色模式" />
+                        <StackPanel Margin="0,10,0,5" Orientation="Horizontal">
+                            <TextBlock
+                                Width="100"
+                                VerticalAlignment="Center"
+                                Text="主题颜色：" />
+                            <ComboBox x:Name="cmbThemeColor" Width="200">
+                                <ComboBoxItem Content="蓝色" IsSelected="True" />
+                                <ComboBoxItem Content="绿色" />
+                                <ComboBoxItem Content="紫色" />
+                                <ComboBoxItem Content="橙色" />
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,5" Orientation="Horizontal">
+                            <TextBlock
+                                Width="100"
+                                VerticalAlignment="Center"
+                                Text="字体大小：" />
+                            <Slider
+                                x:Name="sldFontSize"
+                                Width="200"
+                                IsSnapToTickEnabled="True"
+                                Maximum="20"
+                                Minimum="10"
+                                TickFrequency="1"
+                                TickPlacement="BottomRight"
+                                Value="12" />
+                            <TextBlock
+                                Margin="10,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="{Binding ElementName=sldFontSize, Path=Value, StringFormat={}{0:N0}}" />
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox
+                    Margin="0,10"
+                    Padding="10"
+                    Header="系统设置">
+                    <StackPanel>
+                        <CheckBox
+                            x:Name="chkAutoUpdate"
+                            Margin="0,5"
+                            Content="自动检查更新"
+                            IsChecked="True" />
+                        <CheckBox
+                            x:Name="chkEnableNotifications"
+                            Margin="0,5"
+                            Content="启用通知"
+                            IsChecked="True" />
+                        <CheckBox
+                            x:Name="chkRememberLogin"
+                            Margin="0,5"
+                            Content="记住登录状态" />
+                        <StackPanel Margin="0,10,0,5" Orientation="Horizontal">
+                            <TextBlock
+                                Width="100"
+                                VerticalAlignment="Center"
+                                Text="缓存大小：" />
+                            <ComboBox x:Name="cmbCacheSize" Width="200">
+                                <ComboBoxItem Content="100MB" />
+                                <ComboBoxItem Content="500MB" IsSelected="True" />
+                                <ComboBoxItem Content="1GB" />
+                                <ComboBoxItem Content="2GB" />
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox
+                    Margin="0,10"
+                    Padding="10"
+                    Header="页面缓存设置">
+                    <StackPanel>
+                        <RadioButton
+                            x:Name="rbCacheAll"
+                            Margin="0,5"
+                            Content="缓存所有页面（提高性能，但消耗更多内存）"
+                            GroupName="CacheStrategy"
+                            IsChecked="True" />
+                        <RadioButton
+                            x:Name="rbCacheCommon"
+                            Margin="0,5"
+                            Content="仅缓存常用页面"
+                            GroupName="CacheStrategy" />
+                        <RadioButton
+                            x:Name="rbCacheNone"
+                            Margin="0,5"
+                            Content="不缓存页面（降低内存占用，但可能影响性能）"
+                            GroupName="CacheStrategy" />
+                    </StackPanel>
+                </GroupBox>
+
+                <StackPanel
+                    Margin="0,20,0,20"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="btnReset"
+                        Width="150"
+                        Height="35"
+                        Margin="0,0,10,0"
+                        Click="btnReset_Click"
+                        Content="恢复默认" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page> 

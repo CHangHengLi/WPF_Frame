@@ -1,0 +1,46 @@
+<Page
+    x:Class="WPF_Frame.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_Frame.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="首页"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center"
+                FontSize="28"
+                FontWeight="Bold"
+                Text="欢迎使用 WPF Frame 控件演示" />
+            <TextBlock
+                Margin="0,0,0,40"
+                HorizontalAlignment="Center"
+                FontSize="16"
+                Text="这是一个简单的WPF导航演示程序" />
+            <Border
+                Width="500"
+                Padding="20"
+                CornerRadius="5">
+                <TextBlock Margin="10" TextWrapping="Wrap">
+                    <Run FontSize="16" FontWeight="Bold">功能特点：</Run>
+                    <LineBreak />
+                    <Run>• 使用Frame控件实现页面导航</Run>
+                    <LineBreak />
+                    <Run>• 支持前进和后退操作</Run>
+                    <LineBreak />
+                    <Run>• 自动高亮当前选中的菜单</Run>
+                    <LineBreak />
+                    <Run>• 页面之间传递参数</Run>
+                    <LineBreak /><LineBreak />
+                    <Run>使用左侧菜单来浏览不同页面，体验WPF Frame导航的强大功能。</Run>
+                </TextBlock>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page> 

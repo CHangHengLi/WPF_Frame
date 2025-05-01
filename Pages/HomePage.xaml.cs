@@ -1,0 +1,52 @@
+using System.Windows.Controls;
+
+namespace WPF_Frame.Pages
+{
+    /// <summary>
+    /// HomePage.xaml 的交互逻辑
+    /// </summary>
+    public partial class HomePage : Page
+    {
+        public HomePage()
+        {
+            InitializeComponent();
+            
+            // 页面加载时检查全局主题设置
+            ApplyGlobalThemeSettings();
+        }
+        
+        // 应用全局主题设置
+        private void ApplyGlobalThemeSettings()
+        {
+            // 应用字体大小
+            this.FontSize = MainWindow.GlobalFontSize;
+            
+            // 应用深色/浅色模式
+            if (MainWindow.IsDarkMode)
+            {
+                ApplyDarkMode();
+            }
+            else
+            {
+                ApplyLightMode();
+            }
+        }
+        
+        // 应用深色模式
+        private void ApplyDarkMode()
+        {
+            // 这里手动设置深色模式样式，确保视觉一致性
+            this.Background = new System.Windows.Media.SolidColorBrush(
+                System.Windows.Media.Color.FromRgb(70, 70, 70));
+            this.Foreground = System.Windows.Media.Brushes.White;
+        }
+        
+        // 应用浅色模式
+        private void ApplyLightMode()
+        {
+            // 恢复默认样式
+            this.Background = System.Windows.Media.Brushes.White;
+            this.Foreground = System.Windows.Media.Brushes.Black;
+        }
+    }
+} 
