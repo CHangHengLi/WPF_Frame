@@ -5,6 +5,7 @@
 ## 项目简介
 
 本项目是WPF Frame控件的实际应用示例，展示了如何在WPF应用程序中实现页面导航和页面管理。Frame控件是WPF中用于导航和页面管理的重要容器控件，它提供了在同一窗口内加载和切换不同页面的能力。
+![image](https://github.com/user-attachments/assets/0209032b-5e30-495a-ad61-730579eaae48)
 
 ## 功能特点
 
