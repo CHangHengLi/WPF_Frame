@@ -53,13 +53,12 @@ namespace WPF_Frame.Pages
         
         private void ViewSourceCode_Click(object sender, RoutedEventArgs e)
         {
-            // 在实际应用中，这将打开源代码仓库网站
-            // 这里仅显示一个消息框作为演示
-            MessageBox.Show(
-                "源代码可在GitHub上查看。\n\n本演示程序展示了WPF Frame控件的基本用法，包括页面导航、导航历史管理和页面间参数传递等功能。",
-                "源代码信息",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            // 直接打开GitHub仓库链接
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/CHangHengLi/WPF_Frame",
+                UseShellExecute = true
+            });
         }
     }
 } 

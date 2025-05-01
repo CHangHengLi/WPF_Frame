@@ -64,7 +64,7 @@
                             Grid.Row="1"
                             Grid.Column="1"
                             Margin="0,5,0,0"
-                            Text="WPF Studio" />
+                            Text="ChangHeng" />
 
                         <TextBlock
                             Grid.Row="2"
@@ -88,7 +88,7 @@
                             Grid.Row="3"
                             Grid.Column="1"
                             Margin="0,5,0,0"
-                            Text="2024-05-01" />
+                            Text="2025-05-02" />
                     </Grid>
                 </StackPanel>
             </Border>
