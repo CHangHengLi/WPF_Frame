@@ -526,6 +526,14 @@ public partial class MainWindow : Window
         }
     }
     
+    private void btnHistory_Click(object sender, RoutedEventArgs e)
+    {
+        // 显示导航历史对话框
+        var historyDialog = new HistoryDialog(MainFrame);
+        historyDialog.Owner = this;
+        historyDialog.ShowDialog();
+    }
+    
     // 添加应用主题颜色到选中按钮的方法
     private void ApplyThemeColorToSelectedButton()
     {
